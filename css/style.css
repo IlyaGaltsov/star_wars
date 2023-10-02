@@ -1,0 +1,104 @@
+body {
+    background-image: url('/images/CTM.gif');
+    background-size: cover; /* Растягиваем изображение, чтобы оно покрывало всю область body */
+    background-repeat: no-repeat; /* Запрет повторения изображения */
+    background-attachment: fixed; /* Зафиксированный фон */
+}
+header h1{
+    padding: 20px 0 0 0;
+    text-align: center;
+    color: yellow;
+    font-size:  80px;
+    letter-spacing: 15px;
+    font-weight: 900;
+    font-style: italic;
+}
+.btns{
+    text-align: center;
+}
+.btn{
+    width: 200px;
+    height: 70px;
+    margin: 0 100px 0 100px;
+    background-color:black;
+    color:yellow;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 800;
+    border-radius: 8px;
+}
+.btn:hover{
+    color:red;
+    width: 220px;
+    height: 100px;
+}
+
+.offer__slider {
+    width: 1000px;
+    height: 500px;
+    margin: 30px 0 190px 0;
+}
+.offer__slider-counter {
+    display: flex;
+}
+.offer__slider-prev {
+    position: relative;
+    left:41%;
+    top: 300px;
+}
+.offer__slider-next {
+    position: relative;
+    left: 140%;
+    top:300px ;
+}
+.offer__slider-inner {
+    display: flex;
+}
+.offer__slide{
+    position: relative;
+    left: 50%; 
+}
+.offer__slide img{
+    width: 900px;
+    height: 600px;
+}
+.offer__slide:nth-child(2) {
+    display: none;
+}
+.offer__slide:nth-child(3) {
+    display: none;
+}
+.list-info{
+    margin: 0 400px;
+    display: flex;
+}
+.peoples {
+    font-size: 24px;
+    color:white;
+    width: 200px;
+    margin: 0 0 0 20px;
+}
+.planets {
+    width: 200px;
+    font-size: 24px;
+    color:white;
+    margin: 0 0 0 155px;
+}
+.transports {
+    font-size: 24px;
+    color:white;
+    width: 200px;
+    margin: 0 0 0 155px;
+}
+.load-more-button {
+    background-color:black;
+    color: red;
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    font-style: italic;
+}
+.load-more-button:hover{
+    width: 160px;
+    height: 50px;
+}
