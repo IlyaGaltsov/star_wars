@@ -92,7 +92,7 @@ header h1{
 }
 .load-more-button {
     background-color:black;
-    color: red;
+    color: yellow;
     font-size: 20px;
     width: 150px;
     height: 40px;
@@ -101,4 +101,53 @@ header h1{
 .load-more-button:hover{
     width: 160px;
     height: 50px;
+    color:red;
+}
+.people_info{
+    margin: 20px 0 20px 5px;
+}
+.btn_people{
+    display: none;
+    margin: 20px 0 0 50px;
+}
+.planet_info{
+    margin: 20px 0 20px 15px;
+}
+.btn_planet{
+    display: none;
+    margin: 20px 0 0 185px;
+}
+.transport_info {
+    margin: 20px 0 20px 0;
+}
+.transport_btn{
+    display: none;
+    margin: 20px 0 0 200px;
+}
+.modal {
+    display: none;
+    border-radius: 3%;
+    position: absolute;
+    bottom: 200px;
+    left: 650px;
+    margin: 0 auto;
+    background-color:yellow;
+    width: 650px;
+    height: 450px;
+}
+.title{
+    display: flex;
+}
+.title h2{
+    color:red;
+    margin: 20px 0 0 20px;
+}
+.close-modal {
+    font-size: 40px;
+    position: absolute;
+    left: 610px;
+    top: -35px;
+}
+.about_list {
+    list-style-type: none;
 }
