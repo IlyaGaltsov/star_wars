@@ -70,6 +70,7 @@ function getPlanet(){
                 modal.style.display = 'block';
                 clearInterval(sliderInterval);
                 disableSlider();
+                clearModalContent();
                 for(let key in planet) {
                         addInfoModal(key, planet[key]);
                 }
@@ -102,6 +103,7 @@ function getVehicles (){
                 modal.style.display = 'block';
                 clearInterval(sliderInterval);
                 disableSlider();
+                clearModalContent();
                 for(let key in vehicles) {
                     addInfoModal(key, vehicles[key]);
                 }
