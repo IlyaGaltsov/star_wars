@@ -1,8 +1,5 @@
 "use strict"
 
-const slides = document.querySelectorAll('.offer__slide');
-const prev = document.querySelector('.offer__slider-prev');
-const next = document.querySelector('.offer__slider-next');
 const peopleBtn = document.getElementById('people');
 const planetBtn = document.getElementById('planet');
 const transportBtn = document.getElementById('transport');
@@ -10,32 +7,6 @@ const closeModal = document.querySelector('.close-modal');
 const modal = document.querySelector('.modal');
 
 const API_BASE = 'https://swapi.dev/api'
-
-
-let slideIndex = 1;
-showSlides(slideIndex);
-function showSlides(n){
-    if(n>slides.length){
-        slideIndex = 1;
-    }
-    if(n<1){
-        slideIndex = slides.length;
-    }
-    slides.forEach(item => item.style.display='none');
-    slides[slideIndex -1].style.display='block'
-}
-function plusSlides(n){
-    showSlides(slideIndex+=n);
-}
-prev.addEventListener('click',()=>{
-    plusSlides(-1)
-});
-next.addEventListener('click',()=>{
-    plusSlides(1)
-});
-setInterval(() => {
-    plusSlides(1); 
-}, 3000);
 
 let peopleNextUrl = `${API_BASE}/people`
 
@@ -54,7 +25,10 @@ function getPeople() {
             listItem.textContent = person.name;
             listItem.addEventListener('click', ()=>{
                 const modal = document.querySelector('.modal')
-                modal.style.display = 'block'
+                modal.style.display = 'block';
+                clearInterval(sliderInterval);
+                disableSlider();
+                clearModalContent();
                 for(let key in person) {
                     if(key !== 'films') {
                         addInfoModal(key, person[key]);
@@ -93,7 +67,9 @@ function getPlanet(){
             listItem.textContent = planet.name;
             listItem.addEventListener('click', ()=>{
                 const modal = document.querySelector('.modal')
-                modal.style.display = 'block'
+                modal.style.display = 'block';
+                clearInterval(sliderInterval);
+                disableSlider();
                 for(let key in planet) {
                         addInfoModal(key, planet[key]);
                 }
@@ -123,7 +99,9 @@ function getVehicles (){
             listItem.textContent = vehicles.name;
             listItem.addEventListener('click', ()=>{
                 const modal = document.querySelector('.modal')
-                modal.style.display = 'block'
+                modal.style.display = 'block';
+                clearInterval(sliderInterval);
+                disableSlider();
                 for(let key in vehicles) {
                     addInfoModal(key, vehicles[key]);
                 }
@@ -142,6 +120,10 @@ function addLoadMoreButton(className, getDataFunction) {
     nextPage.addEventListener('click', getDataFunction);
 }
 
+function clearModalContent() {
+    const aboutList = document.querySelector('.about_list');
+    aboutList.innerHTML = ''; // Очищаем содержимое модального окна
+}
 
 
 peopleBtn.addEventListener('click', ()=>{
@@ -161,4 +143,6 @@ transportBtn.addEventListener('click', ()=>{
 
 closeModal.addEventListener('click', ()=>{
     modal.style.display ='none';
+    startSliderInterval();
+    enableSlider();
 })
